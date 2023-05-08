@@ -112,10 +112,27 @@ const ironMan = {
 
 
 
-  //반복문
-  const names = ['덕배','베살바','홀란드'];
+//반복문
+const names = ['덕배','베살바','홀란드'];
   for (let i = 0; i < names.length; i++) {
     console.log(names[i]);
-  }
+}
+
+const doggy = {
+    name : '코코',
+    sound : '왕',
+    age : 2
+}
+
+for (let key in doggy) {
+    console.log(`${key}:${doggy[key]}`);
+}
+
+let i = 0;
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+
   
 
