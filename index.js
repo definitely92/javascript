@@ -134,5 +134,97 @@ while (i < 10) {
     i++;
 }
 
+
+function winterOf(numbers) {
+  let win = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    win += numbers[i];
+  }
+  return win;
+}
+
+const result = winterOf([1,2,3,4,5]);
+console.log(result);
+
+
+//forEach
+const superheros = ['A','B','C','D'];
+/*function print(hero){
+  console.log(hero);
+}*/
+
+superheros.forEach(function (hero) {
+  console.log(hero);
+})
+
+//map
+const items = [
+  {
+    id : 1,
+    text : 'haha'
+  },
+  {
+    id: 2,
+    text : 'hoho'
+  }
+];
+
+const onlyTetxt = items.map(item => item.text);
+console.log(onlyTetxt);
+
+
+
+const numberss = [1,2,3,4,5];
+let suv = 0;
+numberss.forEach(num => {
+  suv += num;
+});
+console.log(suv);
+
+
+//reduce
+const alphabets = ['a','a','a','b','c', 'c', 'd' ,'e'];
+const counts = alphabets.reduce((acu,current) => {
+  if(acu[current]) {
+    acu[current] += 1;
+  } else {
+    acu[current] = 1;
+  }
+  return acu;
+},{})
+console.log(counts);
+
+
+
+
+function countBiggerThanSeven(numbers){
+  //filter
+  //return numbers.filter( num => num >7).length;
   
+
+  //forEach
+  /*let count = 0;
+  numbers.forEach( n => {
+    if ( n > 7) {
+      count ++;
+    }
+  })
+  return count;*/
+
+
+  //reduce
+ 
+  return numbers.reduce((arr,crr) => {
+    if(crr > 7) {
+      return arr +1;
+    } else {
+      return arr;
+    }
+  } ,0)
+  
+}
+
+const count = countBiggerThanSeven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+console.log(count);   
+
 
