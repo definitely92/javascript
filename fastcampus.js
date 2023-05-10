@@ -225,6 +225,82 @@ function countBiggerThanSeven(numbers){
 }
 
 const count = countBiggerThanSeven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-console.log(count);   
+console.log(count);
 
 
+
+
+//프로토 타입
+function Animal (type, name, sound) {
+  this.type = type;
+  this.name = name;
+  this.sound = sound;
+}
+
+Animal.prototype.say = function() {
+  console.log(this.sound);
+}
+Animal.prototype.shredValue = 1;
+
+const lion = new Animal('개', '멍멍이', '멍멍');
+const tiger = new Animal('고양이', '야옹이', '야옹');
+
+lion.say();
+tiger.say();
+
+console.log(lion.shredValue);
+console.log(tiger.shredValue);
+
+
+//클래스
+class AAnimals {
+  constructor(type, name, sound) {
+    this.type = type;
+    this.name = name;
+    this.sound = sound;
+  }
+  say() {
+    console.log(this.sound);
+  }
+}
+
+class Coco extends AAnimals {
+  constructor(name,sound) {
+    super('개',name,sound);
+  }
+}
+
+class CCat extends AAnimals {
+  constructor(name, sound) {
+    super('고양이',name, sound);
+  }
+}
+
+
+const ddog = new Coco('코코', '왈왈');
+const ccat = new CCat('나비', '야옹');
+
+ddog.say();
+ccat.say();
+
+
+
+class Food {
+  constructor(name) {
+    this.name = name;
+    this.brands = [];
+  }
+  addBrand(brand) {
+    this.brands.push(brand);
+  }
+  print() {
+    console.log(`${this.name}을/를 파는 사람들:`);
+    console.log(this.brands.join(', '));
+  }
+}
+
+const pizza = new Food('피자');
+pizza.addBrand('피자헛');
+pizza.addBrand('도미노 피자');
+
+pizza.print();
