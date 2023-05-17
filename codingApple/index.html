@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>코딩 애플</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./selector.js"></script>
+  </head>
+  <body>
+    <h2 id="hello">안녕하세요</h2>
+    <h2 id="hi">올떄 메로나</h2>
+
+    <div id="alert" class="alert-box">
+        <p id="title">Alert 박스</p>
+        <button id="close">닫기</button>
+    </div>
+
+    <button id="btn1" onclick="alertOpen('아이디');">버튼1</button>
+    <button id="btn2" onclick="alertOpen('password');">버튼2</button>
+
+
+
+    <script>
+      document.getElementById('close').addEventListener('click',function(){
+        document.getElementById('alert').style.display = 'none';
+      });
+
+        function alertOpen(info){
+          document.getElementById('alert').style.display = 'block';
+          document.getElementById('title').innerHTML = info+' 를 입력';
+
+        }
+
+        function hide() {
+          document.getElementById('alert').style.display = 'none';
+        }
+        
+    </script>
+  </body>
+</html>
