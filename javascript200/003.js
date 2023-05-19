@@ -207,3 +207,39 @@ console.log(`3) f >>> ${f}`);     //6
 
 
 // 33. 심볼형
+const symbol = Symbol();
+const hello = Symbol('hello');
+
+console.log(Number(3) === Number(3));
+console.log(Symbol('symbol') === Symbol('symbol'));
+console.log(Symbol() === Symbol());
+console.log(typeof Symbol());
+
+const nationility = Symbol('nationility');
+const user = {
+    name : 'jay'
+};
+user[nationility] = 'korean';
+console.log(user[nationility]);
+
+for(let key in user) {
+    console.log(key);
+}
+console.log(Object.keys(user));
+console.log(Object.getOwnPropertyNames(user));
+console.log(JSON.stringify(user));
+
+// 35. 예외 처리하기
+function checkNumber(val) {
+    if (typeof val !== 'number') throw '유효하지 않은 값입니다.';
+    console.log('숫자형 값으로 확인 되었습니다.');
+}
+
+try {
+    checkNumber(100);
+    checkNumber('Wrong type');
+} catch (e) {
+    console.log(`에러가 발생했습니다 >>> ${e}`);
+} finally {
+    console.log('완료');
+}
