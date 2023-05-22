@@ -3,31 +3,24 @@
 // 예를 들어 주어진 숫자가 5이면 순회하는 숫자를 다 출력 하고 싶음
 // 예를 들어 주어진 숫자가 5이면 순회하는 숫자의 두배값을 다 출력하고 싶음
 
-function iterate (max, action) {
-    for (let i = 0; i < max; i++) {
+function iterate(max,action) {
+    for(let i = 0; i < max; i++) {
         action(i);
+        console.log(action); 
     }
 }
 
-function log(num) {
+function printNUm (num){
     console.log(num);
 }
-function doubleAndLog(num) {
-    console.log(num * 2);
+function printdoubleNUm (num){
+    console.log(num);
 }
-iterate(3, log);
-iterate(3, doubleAndLog);
+
+iterate(5,printNUm);
+iterate(5,printdoubleNUm);
 
 
 setTimeout(() => {
      console.log('3초 뒤 이 함수가 실행');
 },3000);
-
-
-// function calculator(max,action) {
-//     let print = action(max);
-//     console.log(print);
-//     return print;
-// }
-
-// calculator(5,allPrint);
