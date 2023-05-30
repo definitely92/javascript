@@ -16,4 +16,3 @@ function findInteresection(set1,set2){
     return new Set(array);
 }
 console.log(findInteresection(set1,set2));
-
